@@ -46,7 +46,7 @@
             />
 
         <ImageView
-            android:id="@+id/doraemo"
+            android:id="@+id/doraemon"
             android:layout_width="110dp"
             android:layout_height="130dp"
             app:layout_column="1"

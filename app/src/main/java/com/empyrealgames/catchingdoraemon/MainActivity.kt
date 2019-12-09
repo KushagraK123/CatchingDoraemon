@@ -3,13 +3,13 @@ package com.empyrealgames.catchingdoraemon
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.gridlayout.widget.GridLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+
 
 class MainActivity : AppCompatActivity() {
-
-    var score: Int = 0
-
-
+    private var score: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,7 +18,13 @@ class MainActivity : AppCompatActivity() {
 
     fun increaseScore(view: View){
         score++
-        scoreText.setText("Score " + score.toString())
+        scoreText.setText("Score : " + score)
+        val p: GridLayout.LayoutParams = GridLayout.LayoutParams(doraemon.layoutParams)
+        val r:Random = Random()
+        p.columnSpec = GridLayout.spec(r.nextInt(3));
+        p.rowSpec = GridLayout.spec(r.nextInt(3))
+        doraemon.setLayoutParams (p)
+
     }
 
 }
