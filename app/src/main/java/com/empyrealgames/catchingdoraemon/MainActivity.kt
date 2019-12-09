@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     fun increaseScore(view: View){
         score++
-        scoreText.setText(score.toString())
+        scoreText.setText("Score " + score.toString())
     }
 
 }
